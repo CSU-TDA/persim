@@ -12,6 +12,7 @@ from persim import images_weights
 from joblib import Parallel, delayed
 from deprecated.sphinx import deprecated
 from sklearn.base import TransformerMixin
+from sklearn.base import BaseEstimator
 from matplotlib.collections import LineCollection
 from scipy.stats import multivariate_normal as mvn
 
@@ -214,7 +215,7 @@ Parameters
             ax.axis("off")
 
 
-class PersistenceImager(TransformerMixin):
+class PersistenceImager(BaseEstimator, TransformerMixin):
     """Transformer which converts persistence diagrams into persistence images.
 
     Parameters
